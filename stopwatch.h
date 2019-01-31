@@ -10,7 +10,7 @@
  * A stop watch to measure cpu time
  * ----------------------------------------------------------
  */
- 
+
 #ifndef ___STOPWATCH_H
 #define ___STOPWATCH_H
 
@@ -41,7 +41,5 @@
 void start_stopwatch();
 float elapsed_time();
 void stop_stopwatch();
-void clock();
-
 
 #endif

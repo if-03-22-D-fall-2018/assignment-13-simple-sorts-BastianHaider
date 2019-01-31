@@ -24,7 +24,3 @@ void stop_stopwatch()
 {
 
 }
-void clock()
-{
-
-}
