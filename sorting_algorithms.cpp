@@ -48,11 +48,9 @@ void insertion_sort(int small_array[], int length)
     small_array[j+1]=temp;
   }
 }
-void init_random(int small_array[], int length)
+void init_random(int *array, unsigned long length)
 {
-  srandom(time(NULL));
+	srandom(time(NULL));
 	for (unsigned long i = 0; i < length; i++)
-  {
-    small_array[i] = random();
-  }		
+		array[i] = random();
 }
