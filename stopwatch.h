@@ -14,7 +14,6 @@
 #ifndef ___STOPWATCH_H
 #define ___STOPWATCH_H
 #include <time.h>
-#include <stdio.h>
 /**
 *** @file stopwatch.h
 *** @brief Description of stopwatch

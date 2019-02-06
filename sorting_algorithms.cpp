@@ -11,7 +11,16 @@
  *-----------------------------------------------------------------------------
 */
 #include "sorting_algorithms.h"
+#include <time.h>
+#include <stdlib.h>
 
+void init_random(int *array, unsigned long length)
+{
+	srandom(time(NULL));
+	for (unsigned long i = 0; i < length; i++)
+		array[i] = random();
+  
+}
 void bubble_sort(int small_array[], int length)
 {
   int last_unsorted_element=length-1;
@@ -20,7 +29,8 @@ void bubble_sort(int small_array[], int length)
   do
   {
     is_swapped=false;
-    for (int i = 0; i < last_unsorted_element; i++) {
+    for (int i = 0; i < last_unsorted_element; i++)
+    {
       if (small_array[i+1] < small_array[i])
       {
         temp=small_array[i];
@@ -34,23 +44,16 @@ void bubble_sort(int small_array[], int length)
 }
 void insertion_sort(int small_array[], int length)
 {
-  int temp=0;
-  int j=0;
-  for (int i= 1; i < length; i++)
-  {
-    temp=small_array[i];
-    j=i-1;
-    while (j <=0 && temp < small_array[j])
-    {
-      small_array[j+1]=small_array[i];
-      i--;
-    }
-    small_array[j+1]=temp;
-  }
-}
-void init_random(int *array, unsigned long length)
-{
-	srandom(time(NULL));
-	for (unsigned long i = 0; i < length; i++)
-		array[i] = random();
+  int toSwap;
+	int toCompare;
+
+	for (int i = 0; i < length; i++) {
+		toSwap = small_array[i];
+		toCompare = i - 1;
+		while (toCompare >= 0 && small_array[toCompare] > toSwap) {
+			small_array[toCompare + 1] = small_array[toCompare];
+			toCompare--;
+		}
+	}
+	small_array[toCompare + 1] = toSwap;
 }

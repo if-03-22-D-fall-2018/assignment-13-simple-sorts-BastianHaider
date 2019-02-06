@@ -65,5 +65,5 @@ TEST(test_stopwatch_cpu_time)
 	start_stopwatch();
 	sleep(1);
 	stop_stopwatch();
-	ASSERT_EQUALS(0, elapsed_time());
+	ASSERT_EQUALS_TOLERANCE(0, elapsed_time(), 0.001);
 }

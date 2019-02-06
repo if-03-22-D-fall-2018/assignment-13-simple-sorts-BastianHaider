@@ -21,13 +21,13 @@ void start_stopwatch()
 }
 float elapsed_time()
 {
-  stopTime=clock();
+  if (stopTime<startTime)
+  {
+    return (clock()-startTime) / CLOCKS_PER_SEC;
+  }
+  return (stopTime-startTime) / CLOCKS_PER_SEC;
 }
 void stop_stopwatch()
 {
-  if (stopTime<startTime)
-  {
-    return clock()-startTime;
-  }
-  return stopTime-startTime;
+  stopTime=clock();
 }
